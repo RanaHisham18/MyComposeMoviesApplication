@@ -4,12 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -104,12 +104,15 @@ fun MainContent(
 
 
 @Composable
-fun MovieRow(movie: String) {
+fun MovieRow(movie: String , onItemClick : (String) -> Unit = {}) {
     Card(
         modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth()
-            .height(120.dp),
+            .height(120.dp)
+            .clickable {
+onItemClick(movie)
+            },
         shape = RoundedCornerShape(corner = CornerSize(12.dp))
     ) {
         Row(
