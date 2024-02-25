@@ -32,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -75,10 +76,12 @@ fun MyApp(content: @Composable() () -> Unit) {
 @Composable
 fun MainContent(
     movieList: List<String> = listOf(
+        "Tom and Gerry",
+        "Donald Duck",
         "Avatar",
-        "300",
+        "Iron Man",
         "Harry Potter",
-        "Life",
+        "Jarvis",
         "In the shadow of the moon",
         "Titanic",
         "Lala Land"
@@ -106,7 +109,7 @@ fun MovieRow(movie: String) {
         modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth()
-            .height(150.dp),
+            .height(120.dp),
         shape = RoundedCornerShape(corner = CornerSize(12.dp))
     ) {
         Row(
@@ -123,7 +126,8 @@ fun MovieRow(movie: String) {
             Text(text = movie ,
                 modifier = Modifier.padding(4.dp),
                 style = TextStyle(
-                    fontSize = 18.sp,
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.ExtraBold
 
                 )
             )
