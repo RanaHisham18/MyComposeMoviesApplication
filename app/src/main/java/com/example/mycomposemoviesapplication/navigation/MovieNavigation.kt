@@ -13,7 +13,7 @@ NavHost(navController = navController,
     //Here is the Nav builder
   composable(ApplicationScreens.HOME.name){
 //we should pass the actual composable
-      ApplicationScreens.HOME.name()
+      ApplicationScreens.HOME.name
   }
 }
 }
