@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mycomposemoviesapplication.screens.details.DetailsScreen
 import com.example.mycomposemoviesapplication.screens.home.HomeScreen
 
 @Composable
@@ -19,5 +20,8 @@ NavHost(navController = navController,
 //we should pass the actual composable
    HomeScreen(navController = navController)
   }
+    composable(ApplicationScreens.DETAILS.name){
+        DetailsScreen(navController = navController)
+    }
 }
 }
